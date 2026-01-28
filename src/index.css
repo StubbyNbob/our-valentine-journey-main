@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Romantic Valentine Theme - Warm, intimate, and elegant */
+
+@layer base {
+  :root {
+    --background: 20 25% 6%;
+    --foreground: 30 20% 95%;
+
+    --card: 20 20% 10%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 20 20% 10%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 350 70% 55%;
+    --primary-foreground: 30 20% 98%;
+
+    --secondary: 25 30% 15%;
+    --secondary-foreground: 30 20% 90%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 340 60% 45%;
+    --accent-foreground: 30 20% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 350 70% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom romantic colors */
+    --rose: 350 70% 55%;
+    --rose-glow: 350 80% 65%;
+    --blush: 350 50% 75%;
+    --warm-cream: 35 40% 92%;
+    --golden: 40 80% 55%;
+    --golden-glow: 40 90% 65%;
+    --deep-burgundy: 350 60% 25%;
+    --soft-pink: 350 60% 80%;
+  }
+
+  .dark {
+    --background: 20 25% 6%;
+    --foreground: 30 20% 95%;
+
+    --card: 20 20% 10%;
+    --card-foreground: 30 20% 95%;
+
+    --popover: 20 20% 10%;
+    --popover-foreground: 30 20% 95%;
+
+    --primary: 350 70% 55%;
+    --primary-foreground: 30 20% 98%;
+
+    --secondary: 25 30% 15%;
+    --secondary-foreground: 30 20% 90%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 340 60% 45%;
+    --accent-foreground: 30 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 350 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient-rose {
+    @apply bg-gradient-to-r from-[hsl(var(--rose))] via-[hsl(var(--rose-glow))] to-[hsl(var(--soft-pink))] bg-clip-text text-transparent;
+  }
+
+  .text-gradient-golden {
+    @apply bg-gradient-to-r from-[hsl(var(--golden))] to-[hsl(var(--golden-glow))] bg-clip-text text-transparent;
+  }
+
+  .glow-rose {
+    box-shadow: 0 0 60px 20px hsl(var(--rose) / 0.3),
+                0 0 100px 40px hsl(var(--rose) / 0.15);
+  }
+
+  .glow-golden {
+    box-shadow: 0 0 40px 10px hsl(var(--golden) / 0.3),
+                0 0 80px 30px hsl(var(--golden) / 0.15);
+  }
+
+  .memory-card-shadow {
+    box-shadow: 0 25px 50px -12px hsl(0 0% 0% / 0.5),
+                0 0 30px 5px hsl(var(--rose) / 0.1);
+  }
+}
+
+/* Hide scrollbar for cleaner experience */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Smooth scroll snap for sections */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+}
